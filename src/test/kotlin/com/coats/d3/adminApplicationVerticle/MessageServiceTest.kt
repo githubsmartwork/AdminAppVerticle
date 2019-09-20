@@ -38,9 +38,7 @@ class MessageServiceTest {
   fun checkHandlerParsing() {
     val handlebars = Handlebars()
     val template = handlebars.compile("mytemplate")
-
     val templateString = template.apply("Satheesh")
-    println("----->$templateString")
     Assertions.assertTrue("Satheesh" in templateString)
   }
 
@@ -52,7 +50,6 @@ class MessageServiceTest {
        val handlebars = Handlebars(loader)
        val template= handlebars.compile("myTemplate")
        val templateString = template.apply("Satheesh")
-       println("----->$templateString")
-    Assertions.assertTrue("Satheesh" in templateString)
+       Assertions.assertTrue("Satheesh" in templateString)
   }
 }

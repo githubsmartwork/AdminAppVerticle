@@ -23,7 +23,7 @@ class MainVerticle : AbstractVerticle() {
           startPromise.complete()
           println("HTTP server started on port 8080")
         } else {
-          startPromise.fail(http.cause());
+          startPromise.fail(http.cause())
         }
       }
   }
@@ -64,11 +64,12 @@ class MainVerticle : AbstractVerticle() {
       .end()
   }
 
-  open fun getHostAddress(routingContext: RoutingContext): String? {
-    val ipAddress= routingContext.request().host()
-    //val ipAddress = routingContext.request().remoteAddress().host()
+  fun getHostAddress(routingContext: RoutingContext): String? {
+    //val ipAddress= routingContext.request().host()
+     val ipAddress = routingContext.request().remoteAddress().host()
+
     //println("headers---->"+routingContext.request().headers()
-   return ipAddress;
+   return ipAddress
   }
 }
 
