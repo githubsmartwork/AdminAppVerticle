@@ -9,6 +9,14 @@ This application was generated using http://start.vertx.io
 To launch your tests:
 ```
 ./mvnw clean test
+
+
+mvn clean test -P dev
+
+mvn clean verify -P all-tests
+
+mvn clean verify -P integration-test
+
 ```
 
 To package your application:
@@ -19,6 +27,8 @@ To package your application:
 To run your application:
 ```
 ./mvnw clean compile exec:java
+or
+exec:java -Dexec.mainClass=com.coats.d3.MainVerticle
 ```
 
 == Help
